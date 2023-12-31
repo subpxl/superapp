@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 chan go</title>
+    
+    <script src="https://unpkg.com/htmx.org@1.9.9"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>   
+</head>
+<body class="bg-slate-200 min-h-screen">
+    <h1>Welcome to {{.board.Name}}</h1>
+
+    <ul class="gap-4 p-4">
+        {{range .boards}}
+        <li class="m-2 max-w-md">
+            <a href="/board/{{.Link}}">
+                <div class="bg-white rounded-xl shadow-md  flex items-center space-x-4  p-4">
+                    <div class="text-xl font-medium text-black">{{.Name}}</div>
+                </div>
+            </a>
+        </li>
+        {{end}}
+    </ul>
+</body>
+</html>

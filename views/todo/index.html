@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiber HTML Template with htmx</title>
+    <script src="https://unpkg.com/htmx.org@1.9.9"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>        
+</head>
+<body>
+    <div class="container mx-auto">
+
+    <h1>ToDo List</h1>
+
+    <form action="/todo/add" method="post" hx-post="todo/add" hx-target="#taskList" hx-swap="outerHTML">
+        <input type="text" id="inputData" name="task"><br><br>
+        <button type="submit">Submit</button>
+      </form>
+
+    <ul id="taskList">
+    </ul>  
+
+
+</div>
+
+</body>
+</html>
