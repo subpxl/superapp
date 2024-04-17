@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"gohtmx/app/board"
-	"gohtmx/app/todo"
+	"superapp/app/board"
+	"superapp/app/todo"
 
 	"github.com/gofiber/fiber/v2"
 
@@ -56,8 +56,6 @@ func main() {
 	app.Use(recover.New())
 
 	app.Static("/static", "./static")
-	
-
 
 	// Routes
 	todo.Setup(app)
