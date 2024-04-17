@@ -25,3 +25,5 @@ jobs:
       
       - name: test
         run: go test -v ./...
+
+      - name: Find Issues
