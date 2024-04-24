@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiber HTML Template with htmx</title>
+    <title>todo app</title>
     <script src="https://unpkg.com/htmx.org@1.9.9"></script>
-
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>        
+    <script src="https://cdn.tailwindcss.com"></script>   
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-    <div class="container mx-auto">
+<body class="bg-gray-100">
 
-    <h1>ToDo List</h1>
+    <div class="container mx-auto p-8">
 
-    <form action="/todo/add" method="post" hx-post="todo/add" hx-target="#taskList" hx-swap="outerHTML">
-        <input type="text" id="inputData" name="task"><br><br>
-        <button type="submit">Submit</button>
-      </form>
+        <h1 class="text-3xl font-bold mb-6">ToDo List</h1>
 
-    <ul id="taskList">
-    </ul>  
+        <form action="/todo/add" method="post" hx-post="todo/add" hx-target="#taskList" hx-swap="outerHTML">
+            <input type="text" id="inputData" name="task" class="border border-gray-300 px-4 py-2 rounded-md mb-4 focus:outline-none focus:border-blue-500">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" type="submit">Submit</button>
+        </form>
 
+        <ul id="taskList" class="mt-6">
+            <!-- Tasks will be added dynamically here -->
+        </ul>  
 
-</div>
+    </div>
 
 </body>
 </html>

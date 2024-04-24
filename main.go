@@ -58,6 +58,10 @@ func main() {
 	app.Static("/static", "./static")
 
 	// Routes
+
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.Render("index", fiber.Map{})
+	})
 	todo.Setup(app)
 	board.Setup(app)
 
