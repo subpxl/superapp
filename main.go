@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"superapp/app/board"
+	"superapp/app/stories"
 	"superapp/app/todo"
 
 	"github.com/gofiber/fiber/v2"
@@ -64,6 +65,7 @@ func main() {
 	})
 	todo.Setup(app)
 	board.Setup(app)
+	stories.Setup(app)
 
 	// Run the server on port 8000
 	err := app.Listen(":8000")
